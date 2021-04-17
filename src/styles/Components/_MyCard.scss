@@ -1,0 +1,32 @@
+.form-control {
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0px;
+}
+
+.card {
+    border-radius: 0rem;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.card-footer {
+    background-color: #fff; 
+}
+
+.text-muted {
+    color: #c7c8ca !important;
+}
+
+.hide {
+    text-decoration: none;
+    color: darkred;
+}
+
+.hide:hover {
+    text-decoration: none;
+    color: darkred;
+    cursor: pointer;
+}

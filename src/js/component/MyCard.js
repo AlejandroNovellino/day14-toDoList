@@ -1,16 +1,33 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Container, Row, Col, Card, ListGroup, Form } from "react-bootstrap";
+
+import { MyItem } from "./MyItem";
+
+import { Card, Form, ListGroup } from "react-bootstrap";
 
 function MyCard() {
 	let [list, setList] = useState([]);
+	let [idCounter, setIdCounter] = useState(1);
 
 	function handleKeyDown(e) {
 		if (e.key != "Enter") return null;
 
-		let auxValue = e.target.value;
+		let auxElement = {
+			id: `e-${idCounter}`,
+			value: e.target.value
+		};
 		let auxList = [...list];
-		auxList.push(auxValue);
+		auxList.push(auxElement);
+
+		let auxIdCounter = idCounter;
+		auxIdCounter++;
+
+		setList(auxList);
+		setIdCounter(auxIdCounter);
+	}
+
+	function handleClick(id) {
+		let auxList = list.filter(element => element.id != id);
 		setList(auxList);
 	}
 
@@ -26,24 +43,14 @@ function MyCard() {
 				</Form.Group>
 			</Card.Body>
 			<ListGroup variant="flush">
-				{list.map((element, index) => {
+				{list.map(element => {
 					return (
-						<ListGroup.Item key={`group-${index}`} className="pl-5">
-							<Container>
-								<Row>
-									<Col lg={11}>
-										{" "}
-										<p className="m-0">{element}</p>{" "}
-									</Col>
-									<Col
-										lg={1}
-										className="d-flex align-items-center justify-content-center p-0">
-										{" "}
-										<a hidden>X</a>{" "}
-									</Col>
-								</Row>
-							</Container>
-						</ListGroup.Item>
+						<MyItem
+							key={element.id}
+							id={element.id}
+							element={element.value}
+							func={handleClick}
+						/>
 					);
 				})}
 			</ListGroup>

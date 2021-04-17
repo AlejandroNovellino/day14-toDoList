@@ -6,9 +6,9 @@ import { MyCard } from "./MyCard";
 //create your first component
 export function Home() {
 	return (
-		<Container fluid className="bg-dark vw-100">
+		<Container fluid className="background vw-100 vh-100">
 			<Row className="justify-content-center">
-				<h1 className="display-1 text-white ">todos</h1>
+				<h1 className="display-1 titleColor">todos</h1>
 			</Row>
 			<Row className="justify-content-center">
 				<MyCard />
