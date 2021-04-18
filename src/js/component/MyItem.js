@@ -12,12 +12,12 @@ function MyItem(props) {
 	return (
 		<ListGroup.Item className="pl-5">
 			<Container>
-				<Row>
-					<Col lg={11}>
+				<Row className="row-cols-2">
+					<Col xs={10}>
 						<p className="m-0">{props.element}</p>
 					</Col>
 					<Col
-						lg={1}
+						xs={2}
 						className="d-flex align-items-center justify-content-center p-0">
 						<a
 							className="hide"

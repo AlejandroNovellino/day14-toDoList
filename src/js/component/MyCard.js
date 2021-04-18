@@ -32,7 +32,7 @@ function MyCard() {
 	}
 
 	return (
-		<Card className="mb-5" style={{ width: "30rem" }}>
+		<Card className="m-auto" style={{ width: "30rem" }}>
 			<Card.Body>
 				<Form.Group className="m-0">
 					<Form.Control
