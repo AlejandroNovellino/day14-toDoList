@@ -32,32 +32,38 @@ function MyCard() {
 	}
 
 	return (
-		<Card className="m-auto" style={{ width: "30rem" }}>
-			<Card.Body>
-				<Form.Group className="m-0">
-					<Form.Control
-						onKeyDownCapture={handleKeyDown}
-						type="text"
-						placeholder={!list.length ? "No tasks, add a task" : ""}
-					/>
-				</Form.Group>
-			</Card.Body>
-			<ListGroup variant="flush">
-				{list.map(element => {
-					return (
-						<MyItem
-							key={element.id}
-							id={element.id}
-							element={element.value}
-							func={handleClick}
+		<>
+			<Card className="m-auto boxShadowCard" style={{ width: "30rem" }}>
+				<Card.Body>
+					<Form.Group className="m-0">
+						<Form.Control
+							onKeyDownCapture={handleKeyDown}
+							type="text"
+							placeholder={
+								!list.length ? "No tasks, add a task" : ""
+							}
 						/>
-					);
-				})}
-			</ListGroup>
-			<Card.Footer className="text-muted p-2">
-				{list.length} item left
-			</Card.Footer>
-		</Card>
+					</Form.Group>
+				</Card.Body>
+				<ListGroup variant="flush">
+					{list.map(element => {
+						return (
+							<MyItem
+								key={element.id}
+								id={element.id}
+								element={element.value}
+								func={handleClick}
+							/>
+						);
+					})}
+				</ListGroup>
+				<Card.Footer className="text-muted p-2">
+					{list.length} item left
+				</Card.Footer>
+			</Card>
+			<div className="paperDesign border-top-0" id="design1"></div>
+			<div className="paperDesign border-top-0" id="design2"></div>
+		</>
 	);
 }
 
