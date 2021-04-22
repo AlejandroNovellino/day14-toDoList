@@ -24,6 +24,7 @@ function MyCard() {
 
 		setList(auxList);
 		setIdCounter(auxIdCounter);
+		e.target.value = "";
 	}
 
 	function handleClick(id) {
